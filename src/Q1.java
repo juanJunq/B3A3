@@ -39,10 +39,15 @@ class Pessoa{
 
 
 public class Q1 {
-    static void Irmaos(Pessoa a, Pessoa b){
-        if(a.getPai().equals(b.getPai())){
-            System.out.println("Eles são irmãos!");
-        }
+    static void Irmaos(Pessoa pessoa, Pessoa pessoa2){
+        if(pessoa.getPai().equals(pessoa2.getPai()) || pessoa.getMae().equals(pessoa2.getMae())){
+            System.out.println("Eles são irmãos.");
+        }else System.out.println("Eles não são irmãos.");
+    }
+    static void Antecessor(Pessoa pessoa, Pessoa pessoa2){
+        if(pessoa.getPai().equals(pessoa2.getNome()) || pessoa.getMae().equals(pessoa2.getNome())){
+            System.out.printf("%s%s%n", pessoa2.getNome(), " é pai ou mãe de ", pessoa.getNome());
+        }else System.out.printf("%s%s%s%n", pessoa2.getNome(), " não é pai ou mãe de ", pessoa.getNome());;
     }
     public static void main(String args[]) throws IOException{
         FileInputStream File = new FileInputStream("C:/Java/File/Arquivo.txt");
@@ -63,27 +68,8 @@ public class Q1 {
         pessoa2.SetPai(BufferR2.readLine());
         pessoa2.SetMae(BufferR2.readLine());
         Irmaos(pessoa, pessoa2);
-
-
-
-
-
-
-
-
-
-
-        // System.out.printf("Nome: ");
-        // System.out.println(pessoa.getNome());
-        // System.out.printf("Mae: ");
-        // System.out.println(pessoa.getMae());
-        // System.out.printf("Pai: ");
-        // System.out.println(pessoa.getPai());
-        // System.out.printf("Nome: ");
-        // System.out.println(pessoa2.getNome());
-        // System.out.printf("Mae: ");
-        // System.out.println(pessoa2.getMae());
-        // System.out.printf("Pai: ");
-        // System.out.println(pessoa2.getPai());
+        Antecessor(pessoa, pessoa2);
+        BufferR.close();
+        BufferR2.close();
     }
 }
