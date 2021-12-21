@@ -47,7 +47,10 @@ public class Q1 {
     static void Antecessor(Pessoa pessoa, Pessoa pessoa2){
         if(pessoa.getPai().equals(pessoa2.getNome()) || pessoa.getMae().equals(pessoa2.getNome())){
             System.out.printf("%s%s%n", pessoa2.getNome(), " é pai ou mãe de ", pessoa.getNome());
-        }else System.out.printf("%s%s%s%n", pessoa2.getNome(), " não é pai ou mãe de ", pessoa.getNome());;
+        }else System.out.printf("%s%s%s%n", pessoa2.getNome(), " não é pai ou mãe de ", pessoa.getNome());
+        if(pessoa2.getPai().equals(pessoa.getNome()) || pessoa2.getMae().equals(pessoa.getNome())){
+            System.out.printf("%s%s%s%n", pessoa.getNome(), " é pai ou mãe de ", pessoa2.getNome());
+        }else System.out.printf("%s%s%s%n", pessoa.getNome(), " não é pai ou mãe de ", pessoa2.getNome());
     }
     public static void main(String args[]) throws IOException{
         FileInputStream File = new FileInputStream("C:/Java/File/Arquivo.txt");
