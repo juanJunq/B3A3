@@ -40,14 +40,8 @@ class Pessoa{
 
 public class Q1 {
     static void Irmaos(Pessoa a, Pessoa b){
-        System.out.printf("Nome: ");
-        System.out.println(a.getPai());
-        System.out.printf("Nome: ");
-        System.out.println(b.getPai());
-        if(a.getPai() == b.getPai()){
+        if(a.getPai().equals(b.getPai())){
             System.out.println("Eles são irmãos!");
-        }else{
-            System.out.println("aaa");
         }
     }
     public static void main(String args[]) throws IOException{
